@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shoppingstore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,10 +19,10 @@ namespace Shoppingstore.Controllers
             string message = HttpUtility.HtmlEncode("Showing category "+category);
             return message;
         }
-        public string Details(int id)
+        public ActionResult Details(int id)
         {
-            string message = "store details" + id;
-            return message;
+            var Item = new Item { Title = "Item" + id };
+            return View(Item);
         }
     }
 }
